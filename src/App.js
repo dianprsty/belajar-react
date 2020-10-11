@@ -1,14 +1,17 @@
 import React from 'react';
-import {Header, Content, Footer} from './component/template/index'
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom"
+import { Header, Content, Footer } from "./template"
+
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Content />
-      <Footer />
-    </Router>
+    <div className="App">
+      <Router>
+        <Header />
+        <Content />
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

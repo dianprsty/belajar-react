@@ -1,6 +1,5 @@
-import Home from "./home"
-import Member from "./member"
-import Login from "./form/login"
-import Register from "./form/register"
+import Login from "./login"
+import AddStudent from "./register/add_student"
+import Home from "./home/student_list"
 
-export { Home, Login, Register, Member }
+export { Login, AddStudent, Home}
