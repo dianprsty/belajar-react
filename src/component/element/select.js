@@ -1,27 +1,19 @@
 import React, { Component } from 'react'
 
- class SelectGoldar extends Component {
+class Select extends Component {
     render() {
         return (
             <div>
-                <div style={{ textAlign: "left", marginTop: "10px" }}>
-                    <label >Golongan Darah</label>
-                </div>
-                <select
-                    name = "goldar"
-                    className ="form-control"
-
-                >
-                    <option value="">--Pilih Golongan Darah--</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="AB">AB</option>
-                    <option value="O">O</option>
-                </select>
+                <label>{this.props.label}</label>
+                <input
+                    type={this.props.type}
+                    name={this.props.name}
+                    value={this.props.value}
+                    onChange={e => this.props.inputData(e.target)}
+                />
             </div>
         )
     }
 }
 
-
-export default SelectGoldar
+export default Select

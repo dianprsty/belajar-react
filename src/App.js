@@ -1,17 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router } from "react-router-dom"
-import { Header, NavBar, Footer } from "./template"
-import './App.css';
+import {Header, Content, Footer} from './component/template/index'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App next">
-      <Router>
-        <Header />
-        <NavBar />
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <Header />
+      <Content />
+      <Footer />
+    </Router>
   );
 }
 
