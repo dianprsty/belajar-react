@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import {Input,TextArea} from '../../component'
 import { Redirect } from 'react-router-dom'
 
@@ -24,9 +25,7 @@ class AddStudent extends Component {
 
     }
 
-    mapStateToProps = (state) => ({
-        statusLogin: state.auth.isLogin
-    })
+
 
     render() {
         if (this.state.redirect){
@@ -67,4 +66,8 @@ class AddStudent extends Component {
     }
 }
 
-export default AddStudent
+const mapStateToProps = (state) => ({
+    statusLogin: state.auth.isLogin
+})
+
+export default connect(mapStateToProps)(AddStudent)
