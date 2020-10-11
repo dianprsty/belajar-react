@@ -1,9 +1,6 @@
 import Home from "./home"
+import Member from "./member"
 import Login from "./form/login"
-import AddEmployee from "./form/add-employee"
-import addDivision  from "./form/add-division"
-import Employee from "./form/employee"
-import Division  from "./form/division"
-import assignDivision  from "./form/assign-division"
+import Register from "./form/register"
 
-export { Home, Login, AddEmployee, addDivision, Employee, Division, assignDivision }
+export { Home, Login, Register, Member }

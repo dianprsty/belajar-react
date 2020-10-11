@@ -10,7 +10,6 @@ class Input extends Component {
             <input 
                 type={ this.props.type }
                 name={ this.props.name }
-                className ="form-control"
                 value={ this.props.value }
                 onChange={ (el) => this.props.onChangeValue(el.target) } />
          );

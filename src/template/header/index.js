@@ -7,7 +7,7 @@ class Header extends Component {
     }
     render() { 
         return ( 
-            <div style={{ height: "200px",paddingTop:"60px", backgroundColor: "black", fontSize :"50px", fontWeight :"bolder", color :"gold" }}>EM System</div>
+            <div style={{ height: "70px", backgroundColor: "#cecece" }}>ini header</div>
          );
     }
 }

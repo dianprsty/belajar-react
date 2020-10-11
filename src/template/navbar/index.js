@@ -1,98 +1,53 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from "react-router-dom"
-import { Home, Login, AddEmployee, addDivision, Employee, Division, assignDivision } from "../../pages"
+import { Home, Login, Register, Member } from "../../pages"
 import { Menu } from "../../component/element"
 
 class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            employeeList:[],
-            isLogin:false,
-            division:""
+            
+            username: "",
+            password: "",
+            isLogin:""
          }
     }
-
-    saveEmployee = (a) => {
-       let empList =this.state.employeeList
-       empList.push(a)
-
-       this.setState({
-           employeeList:empList
-       })
-
-    }
-
-    changeLoginStatus = (newStatus) => {
+    setValueInput = (b) => {
         this.setState({
-            isLogin: newStatus
+            username: b.username,
+            password: b.password
         })
+        console.log(this.username)
+        console.log(this.password)
     }
-
-    hideMenuLogin = () => {
-        if (this.state.isLogin) {
-            return (
-                <div className = "navbar navbar-expand-lg navbar-light bg-light">
-                    <Link to="/">
-                        <Menu>Home</Menu>
-                    </Link>
-                    <Link to="/add-employee">
-                        <Menu>Add Employee</Menu>
-                    </Link>
-                    <Link to="/add-division">
-                        <Menu>Add Division</Menu>
-                    </Link>
-                    <Link to="/employee">
-                        <Menu>Employee</Menu>
-                    </Link>
-                    <Link to="/division">
-                        <Menu>Division</Menu>
-                    </Link>
-                    <Link to="/assign-division">
-                        <Menu>Assign Division</Menu>
-                    </Link>
-                    <Menu triggerLogout={() => this.changeLoginStatus(false)}>Logout</Menu>
-                </div>
-            )
-        }
-
-        return (
-            <>
-                <Link to="/login">
-                    <Menu>Login</Menu>
-                </Link>
-            </>
-        )
-    }
-
 
     render() { 
         return ( 
             <div>
-                <div 
-                    
-                    //style={{ display: "flex", justifyContent: "flex-end", marginTop: "10px" }}
-                    >
-                    
-                    {this.hideMenuLogin()}
+                <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "10px" }}>
+                    <Link to="/">
+                        <Menu>Home</Menu>
+                    </Link>
+                    <Link to="/member">
+                        <Menu>Member</Menu>
+                    </Link>
+                    <Link to="/register">
+                        <Menu>Register</Menu>
+                    </Link>
+                    <Link to="/login">
+                        <Menu>Login</Menu>
+                    </Link>
                 </div>
 
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    {/* <Route path="/add-employee" >
-                        <addEmployee  addData={this.saveEmployee} />
-                    </Route> */}
-                    <Route path="/add-employee" >
-                        <AddEmployee addData = {(data) => this.saveEmployee(data)}/>
-                    </Route>
-                    <Route path="/add-division" component={addDivision} />
-                    <Route path="/employee"  >
-                        <Employee empData = {this.state.employeeList} />
-                    </Route>
-                    <Route path="/division" component={Division} />
-                    <Route path="/assign-division" component={assignDivision} />
+                    <Route path="/member" component={Member} />
+                    <Route path="/register" component={Register} />
                     <Route path="/login">
-                        <Login statusLogin={this.state.isLogin} changeLogin={this.changeLoginStatus} />
+                        <Login
+
+                        />
                     </Route>
                 </Switch>
             </div>
